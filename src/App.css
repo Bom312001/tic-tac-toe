@@ -1,38 +1,168 @@
-.App {
-  text-align: center;
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  padding: 0;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.board {
+  width: 500px;
+  height: 500px;
+  background-color: aquamarine;
+  border: 1px solid #000;
   display: flex;
   flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+/* gap: 10px; khoảng cách giữa các o */
+
+.row {
+  flex: 33%;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #000;
+}
+
+.square {
+  flex: 33%;
+  height: 100%;
+  border: 1px solid #000;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: #000;
+}
+
+.winner {
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  50% {
+    background-color: yellow;
+  }
+}
+
+/* //////////////// */
+.app {
+  background-color: #333;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  /* background-image: url(https://i.imgur.com/OVBsgc1.jpg); */
+  border: 2px solid black;
+  font-family: "Indie Flower", cursive;
+  background-color: #333;
+}
+
+.col {
+  display: flex;
+}
+
+.cell {
+  width: 89px;
+  height: 89px;
+  border: 1px solid lightgray;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xxx-large;
+  text-transform: capitalize;
+  cursor: pointer;
   color: white;
+  font-weight: 900;
 }
 
-.App-link {
-  color: #61dafb;
+/* import "./App.css";
+import { useEffect, useState } from "react";
+import Square from "./Square";
+import { Winner } from "./Winner";
+
+function App() {
+  const [board, setBoard] = useState([
+    ["", "", ""],
+    ["", "", ""],
+    ["", "", ""],
+  ]);
+
+  const [winner, setWinner] = useState(null);
+  const [player, setplayer] = useState("X");
+
+  function playFn(arrayIndex, index) {
+    console.log("click");
+    if (winner) return;
+    board[arrayIndex][index] = player;
+    player === "X" ? setplayer("O") : setplayer("X");
+    setBoard((board) => [...board]);
+  }
+
+  return (
+    // <div className="app">
+    //   <div className="container">
+    //     <div className="col">
+    //       <span onClick={() => playFn(0, 0)} className="cell">
+    //         {board[0][0]}
+    //       </span>
+    //       <span onClick={() => playFn(0, 1)} className="cell">
+    //         {board[0][1]}
+    //       </span>
+    //       <span onClick={() => playFn(0, 2)} className="cell">
+    //         {board[0][2]}
+    //       </span>
+    //     </div>
+    //     <div className="col">
+    //       <span onClick={() => playFn(1, 0)} className="cell">
+    //         {board[1][0]}
+    //       </span>
+    //       <span onClick={() => playFn(1, 1)} className="cell">
+    //         {board[1][1]}
+    //       </span>
+    //       <span onClick={() => playFn(1, 2)} className="cell">
+    //         {board[1][2]}
+    //       </span>
+    //     </div>
+    //     <div className="col">
+    //       <span onClick={() => playFn(2, 0)} className="cell">
+    //         {board[2][0]}
+    //       </span>
+    //       <span onClick={() => playFn(2, 1)} className="cell">
+    //         {board[2][1]}
+    //       </span>
+    //       <span onClick={() => playFn(2, 2)} className="cell">
+    //         {board[2][2]}
+    //       </span>
+    //     </div>
+    //   </div>
+    // </div>
+
+    <div className="app">
+      <div className="board">
+        {board.map((boardItem, i) =>
+          boardItem.map((item, index) => (
+            <Square
+              className="square"
+              value={board[i][index]}
+              handleTick={() => playFn(i, index)}
+            />
+          ))
+        )}
+      </div>
+    </div>
+  );
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+export default App; */

@@ -1,0 +1,75 @@
+/* ////////////////ko can */
+.container {
+  display: flex;
+  flex-direction: column;
+  background-image: url(https://i.imgur.com/OVBsgc1.jpg);
+  border: 2px solid black;
+  font-family: "Indie Flower", cursive;
+}
+
+.col {
+  display: flex;
+}
+
+.cell {
+  width: 89px;
+  height: 89px;
+  border: 1px solid lightgray;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: xxx-large;
+  text-transform: capitalize;
+  cursor: pointer;
+  color: white;
+  font-weight: 900;
+}
+
+.winner {
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  50% {
+    background-color: yellow;
+  }
+}
+
+/* // <div className="app">
+//   <div className="container">
+//     <div className="col">
+//       <span onClick={() => playFn(0, 0)} className="cell">
+//         {board[0][0]}
+//       </span>
+//       <span onClick={() => playFn(0, 1)} className="cell">
+//         {board[0][1]}
+//       </span>
+//       <span onClick={() => playFn(0, 2)} className="cell">
+//         {board[0][2]}
+//       </span>
+//     </div>
+//     <div className="col">
+//       <span onClick={() => playFn(1, 0)} className="cell">
+//         {board[1][0]}
+//       </span>
+//       <span onClick={() => playFn(1, 1)} className="cell">
+//         {board[1][1]}
+//       </span>
+//       <span onClick={() => playFn(1, 2)} className="cell">
+//         {board[1][2]}
+//       </span>
+//     </div>
+//     <div className="col">
+//       <span onClick={() => playFn(2, 0)} className="cell">
+//         {board[2][0]}
+//       </span>
+//       <span onClick={() => playFn(2, 1)} className="cell">
+//         {board[2][1]}
+//       </span>
+//       <span onClick={() => playFn(2, 2)} className="cell">
+//         {board[2][2]}
+//       </span>
+//     </div>
+//   </div>
+// </div> */
